@@ -1,10 +1,5 @@
 name: Redline - Comprobar y publicar
 
-# Este workflow se ejecuta:
-# 1. En cualquier Pull Request.
-# 2. Cuando se suben cambios a la rama main.
-# Solo los cambios de main se publican en GitHub Pages.
-
 on:
   pull_request:
   push:
@@ -55,10 +50,6 @@ jobs:
     needs: comprobar
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.despliegue.outputs.page_url }}
 
     steps:
       - name: Preparar GitHub Pages
