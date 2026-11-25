@@ -1,12 +1,26 @@
-# Redline — Marketplace de Muscle Cars
+# REDLINE — Marketplace de muscle cars
 
-Este proyecto comenzó como una landing page y terminó convirtiéndose en una experiencia completa para explorar muscle cars modernos y clásicos. Lo desarrollé con React y Vite, cuidando tanto el diseño como las interacciones y la adaptación a diferentes tamaños de pantalla.
 
-![Estado del proyecto](https://img.shields.io/badge/estado-en_desarrollo-EF3D25)
+> Una experiencia web creada para explorar, comparar y consultar muscle cars clásicos y modernos.
+
+![Estado](https://img.shields.io/badge/estado-en_desarrollo-EF3D25)
 ![React](https://img.shields.io/badge/React-19-61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-7-646CFF)
 
-> Importante: Redline es una versión de demostración. Por ahora, los vehículos, precios y formularios utilizan datos locales dentro del proyecto. Todavía no están conectados a una API, una base de datos o un sistema de envío real.
+Redline comenzó como una landing page simple y fue creciendo hasta convertirse en un catálogo interactivo. La versión actual permite recorrer vehículos, buscar modelos, marcar favoritos, consultar detalles y probar los flujos de compra y venta desde el navegador.
+
+## Antes de empezar
+
+Este repositorio contiene una demostración frontend. Los vehículos, precios y respuestas de formularios viven dentro del proyecto: todavía no existe conexión con una API, una base de datos o un servicio de mensajes.
+
+### ¿Qué hace especial a este proyecto?
+
+- Interfaz visual pensada para una marca de autos premium.
+- Catálogo local con 20 vehículos.
+- Filtros por categoría y búsqueda por marca o modelo.
+- Modales para detalles, consultas y tasaciones.
+- Diseño adaptable para computadoras, tablets y teléfonos.
+- CI y publicación automática mediante GitHub Actions.
 
 ## Índice
 
@@ -25,24 +39,23 @@ Este proyecto comenzó como una landing page y terminó convirtiéndose en una e
 
 ## 1. ¿Qué es Redline?
 
-Redline es una tienda visual pensada para mostrar autos con personalidad: muscle cars, deportivos y clásicos. Construí la experiencia alrededor de una idea sencilla: que alguien pueda explorar el inventario, revisar las características de un vehículo y enviar una consulta sin salir de la página.
+Redline es una tienda visual creada para presentar autos con personalidad: muscle cars, deportivos y clásicos. La idea fue construir una experiencia sencilla donde una persona pueda explorar el inventario, revisar sus características y probar una consulta sin abandonar la página.
 
-La navegación, el buscador, los filtros y los modales funcionan directamente en el navegador. Las respuestas que aparecen al enviar un formulario son demostraciones visuales, ya que todavía no hay un backend conectado.
+Todo lo que ves al navegar, buscar o filtrar ocurre directamente en el navegador. Los mensajes de confirmación son parte de la demostración, porque todavía no hay una API ni un backend conectado.
 
-## 2. Qué puedes hacer con la página
+## 2. Qué puedes hacer aquí
 
-Para que la página no fuera solo visual, incorporé herramientas que tendría disponible una persona interesada en comprar o publicar un vehículo:
-
-- Ver una colección principal que cambia automáticamente.
-- Navegar cómodamente desde el teléfono o desde una computadora.
+- Recorrer una colección que cambia automáticamente.
+- Navegar desde el teléfono o desde una computadora.
 - Buscar una marca o un modelo específico.
 - Filtrar entre coupés, deportivos, sedanes, clásicos y eléctricos.
-- Revisar 20 vehículos dentro del catálogo de ejemplo.
-- Marcar autos como favoritos durante la visita.
-- Abrir cada vehículo y consultar sus datos principales.
-- Solicitar información mediante un formulario independiente.
-- Publicar información y fotos de un vehículo propio.
-- Consultar los nombres y roles fijos de los integrantes del equipo.
+- Revisar los 20 vehículos incluidos en la demostración.
+- Guardar vehículos favoritos durante la visita.
+- Abrir fichas detalladas de cada vehículo.
+- Completar una solicitud de información.
+- Probar el formulario para vender o tasar un vehículo.
+- Subir hasta ocho imágenes y ver sus vistas previas.
+- Conocer al equipo que desarrolló el proyecto.
 
 ## 3. Tecnologías
 
@@ -226,12 +239,15 @@ Abre esa dirección en el navegador. Cada cambio que guardes debería actualizar
 
 ## 8. Scripts disponibles
 
-| Comando | Función |
+| Comando | ¿Para qué sirve? |
 |---|---|
-| `npm run dev` | Inicia el servidor local de desarrollo |
-| `npm run build` | Genera la versión de producción |
-| `npm run preview` | Previsualiza la versión compilada |
-| `npm run lint` | Ejecuta las reglas de ESLint |
+| `npm run dev` | Abre el proyecto en modo desarrollo |
+| `npm run build` | Crea la versión optimizada para publicar |
+| `npm run preview` | Permite probar la versión compilada en local |
+| `npm run lint` | Revisa si el código tiene errores detectables |
+| `npm run ci` | Ejecuta el lint y después la compilación |
+
+El comando `npm run ci` reproduce las comprobaciones principales antes de subir cambios.
 
 ## 9. Personalización
 
@@ -315,7 +331,7 @@ Redline/
 
 ## 11. Despliegue
 
-Genera los archivos de producción:
+Cuando quieras preparar una versión para publicar, ejecuta:
 
 ```bash
 npm run build
@@ -367,13 +383,15 @@ La información del equipo es fija y solo puede modificarse directamente desde e
 
 ## Limitaciones actuales
 
-- Los formularios no envían datos a un backend.
-- Los vehículos son datos ficticios definidos localmente.
-- Las imágenes se cargan desde servicios externos.
-- Los favoritos no se guardan permanentemente.
-- La subida de fotos solo genera vistas previas en el navegador.
+Conviene tener estas limitaciones claras antes de llevar el proyecto a producción:
 
-## Próximas mejoras recomendadas
+- Los formularios muestran confirmaciones, pero no envían información a un servidor.
+- Los vehículos son ejemplos almacenados dentro del código.
+- Algunas imágenes se cargan desde servicios externos.
+- Los favoritos duran solo mientras la página permanece abierta.
+- Las fotos seleccionadas solo generan vistas previas en el navegador.
+
+## Próximas mejoras
 
 1. Crear una API REST o una base de datos.
 2. Persistir vehículos y favoritos en servidor.
