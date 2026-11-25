@@ -31,7 +31,10 @@ jobs:
           cache: npm
 
       - name: Instalar dependencias exactas
-        run: npm ci
+        run: npm ci --include=optional
+
+      - name: Preparar Lightning CSS
+        run: npm rebuild lightningcss
 
       - name: Revisar errores con ESLint
         run: npm run lint
