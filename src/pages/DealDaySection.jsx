@@ -62,8 +62,8 @@ const DealDaySection = () => {
   return (
     <div className=' mt-10 px-4 lg:px-6'>
         <div className='flex items-center  justify-between'>
-            <h2 className='text-[2rem] font-semibold lg:text-[2.3rem] md:whitespace-nowrap'>Deals Of The Day</h2>
-            <h6  className='hover:text-[#3BB77E] transition-all duration-200 cursor-pointer h-fit  text-zinc-600'>All Deals <i className="ri-arrow-right-s-line"></i></h6>
+            <h2 className='text-[2rem] font-semibold lg:text-[2.3rem] md:whitespace-nowrap'>Ofertas del día</h2>
+            <h6  className='hover:text-[#3BB77E] transition-all duration-200 cursor-pointer h-fit  text-zinc-600'>Todas las ofertas <i className="ri-arrow-right-s-line"></i></h6>
         </div>
         <div className='dailyProductContainer grid grid-cols-1 md:grid-cols-2  place-items-center mt-5'>
             <DealDayProduct ref={addToCardsRef} img={banner1} star='30' name='Seeds of Change Organic Quinaa, brown & Red' rating='4.0' company='nextfood' price='32.85' realPrice='33.0' days="400" />

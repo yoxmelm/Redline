@@ -32,21 +32,21 @@ let badgeStyle = '';
     <div className="relative group">
       <i className="ri-heart-line peer px-2 border-r border-[#3BB77E] cursor-pointer"></i>
       <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#3BB77E] text-white text-xs px-2 py-1 rounded-md whitespace-nowrap hidden peer-hover:block after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-transparent after:border-t-[#3BB77E]">
-        Wishlist
+        Lista de deseos
       </span>
     </div>
 
     <div className="relative group">
       <i className="ri-eye-line px-2 border-r border-[#3BB77E] cursor-pointer peer"></i>
       <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#3BB77E] text-white text-xs px-2 py-1 rounded-md whitespace-nowrap hidden peer-hover:block after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-transparent after:border-t-[#3BB77E]">
-        Quick View
+        Vista rápida
       </span>
     </div>
 
     <div className="relative group">
       <i className="ri-share-forward-line px-2 cursor-pointer peer"></i>
       <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#3BB77E] text-white text-xs px-2 py-1 rounded-md whitespace-nowrap hidden peer-hover:block after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:border-8 after:border-transparent after:border-t-[#3BB77E]">
-        Share
+        Compartir
       </span>
     </div>
 
@@ -88,7 +88,7 @@ let badgeStyle = '';
                  </div>
                  <div className='bg-[#DEF9EC] flex gap-2 text-[#3BB77E] px-3 py-1 rounded-md cursor-pointer hover:translate-y-[-5px] transition-all duration-200 hover:bg-[#3BB77E] hover:text-white'>
                         <i className="ri-shopping-cart-2-line "></i>
-                        <h6>Add</h6>
+                        <h6>Añadir</h6>
                 </div>   
             </div>
     </div>

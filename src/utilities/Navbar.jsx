@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import logo from '../assets/HomePageAssets/logo.svg'
 import wish from '../assets/HomePageAssets/icon-heart.svg'
 import cart from '../assets/HomePageAssets/icon-cart.svg'
@@ -6,11 +6,9 @@ import compare from '../assets/HomePageAssets/icon-compare.svg'
 import user from '../assets/HomePageAssets/icon-user.svg'
 import menuImg from '../assets/HomePageAssets/banner-menu.png'
 import headphone from '../assets/HomePageAssets/icon-headphone.svg'
-import { useState } from 'react'
 import flag1 from '../assets/HomePageAssets/flag-dt.png'
 import flag2 from '../assets/HomePageAssets/flag-fr.png'
 import flag3 from '../assets/HomePageAssets/flag-ru.png'
-import  menuBanner from '../assets/HomePageAssets/banner-menu.png'
 import { gsap } from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
 import cat1 from '../assets/HomePageAssets/category-1.svg'
@@ -45,9 +43,9 @@ const Navbar = () => {
 let animate = useRef();
 
 const messages = [
-  "100% secure delivery without any problem",
-  "Supper value deals | Save more with coupons",
-  "More valuable than any other grocery store"
+  "Entrega 100% segura sin complicaciones",
+  "Ofertas irresistibles | Ahorra más con cupones",
+  "Más valioso que cualquier otra tienda de alimentos"
 ]
 const index = useRef(0);
   useEffect(()=>{
@@ -69,7 +67,7 @@ const index = useRef(0);
     },1000)
 
     return () => clearInterval(interval); 
-  },[])
+  }, [messages.length])
 
   // vertical loop animation 
 
@@ -252,10 +250,10 @@ const index = useRef(0);
       {/* lg par visible hony wali top line */}
       <div ref={topHeadLine} className='hidden lg:flex px-6 justify-between gap-2 mt-2'>
           <div className='flex text-[0.9rem] text-zinc-500 gap-4 h-fit'>
-            <h6 className='capitalize cursor-pointer border-r-1 pr-2'>about us</h6>
-            <h6 className='capitalize cursor-pointer border-r-1 pr-2'>my account</h6>
-            <h6 className='capitalize cursor-pointer border-r-1 pr-2'>wishlist</h6>
-            <h6 className='capitalize cursor-pointer'>order tracking</h6>
+            <h6 className='capitalize cursor-pointer border-r-1 pr-2'>nosotros</h6>
+            <h6 className='capitalize cursor-pointer border-r-1 pr-2'>mi cuenta</h6>
+            <h6 className='capitalize cursor-pointer border-r-1 pr-2'>lista de deseos</h6>
+            <h6 className='capitalize cursor-pointer'>seguimiento de pedidos</h6>
           </div>
           <div className='text-s h-[24px] flex flex-col gap-1 overflow-hidden whitespace-nowrap w-[370px]  text-center'>
             <div className='flex flex-col w-full h-full' ref={animate}>
@@ -266,9 +264,9 @@ const index = useRef(0);
             </div>
           </div>
           <div className='flex text-[0.9rem] text-zinc-500 gap-4'>
-            <h6 className='cursor-pointer border-r-1 pr-2'>Need help? Call Us:</h6>
+            <h6 className='cursor-pointer border-r-1 pr-2'>¿Necesitas ayuda? Llámanos:</h6>
             <h6 className='cursor-pointer pr-2 text-[#3BB77E] font-bold'>+1800 900</h6>
-            <h6 onMouseEnter={enter1} onMouseLeave={leave1} className='border-r-1 border-l-1 pl-2 pr-2 relative' ref={flagList1}><span className='cursor-pointer '>English<i className="ri-arrow-down-s-line"></i></span>
+            <h6 onMouseEnter={enter1} onMouseLeave={leave1} className='border-r-1 border-l-1 pl-2 pr-2 relative' ref={flagList1}><span className='cursor-pointer '>Español<i className="ri-arrow-down-s-line"></i></span>
               <ul className=' flex-col gap-2 absolute top-[100%] left-0 z-99 bg-white p-2 w-26 translate-y-[20px] hidden opacity-[0]'>
                 <li className='flex gap-2 text-[0.8rem] items-center  cursor-pointer'><img src={flag1} alt='FLag Image' className='h-3'/> <h6>Germany</h6></li>
                 <li className='flex gap-2 text-[0.8rem] items-center cursor-pointer'><img src={flag2} alt='FLag Image' className='h-4'/> <h6>France</h6></li>
@@ -286,7 +284,7 @@ const index = useRef(0);
       </div>
       {/*  md par visible hony wali top line  */}
       <div className='hidden md:flex lg:hidden w-full bg-[#3BB77E] text-white justify-center items-center py-1'>
-          <h4 className='text-md'>Grand opening up to 15% off all items. Onlye 3 days left</h4>
+          <h4 className='text-md'>Apertura especial con hasta un 15% de descuento. Solo quedan 3 días</h4>
       </div>
       <div className='flex items-center justify-between py-4  w-full px-4 shadow-md lg:hidden'>
         <i onClick={menuOpenHandler} className="ri-menu-line text-[1.6rem] cursor-pointer"></i>
@@ -319,21 +317,21 @@ const index = useRef(0);
               <div className='border-t-1 border-zinc-200 w-full mt-5 flex flex-col justify-center items-center'>
                 <div className='scrolling w-[18rem] pr-2  h-[88vh] overflow-y-scroll text-base '>
                   <div className='mt-5 w-full relative'>
-                    <input type="text" placeholder='Search for items...' className='outline-none bg-[#F2F3F4] text-sm px-4 py-3 text-black w-full rounded-md '/>
+                    <input type="text" placeholder='Buscar productos...' className='outline-none bg-[#F2F3F4] text-sm px-4 py-3 text-black w-full rounded-md '/>
                     <i className="ri-search-line absolute top-1/2 right-2 translate-y-[-50%]"></i>
                   </div>
                   <ul className='mt-4 gap-2 flex flex-col'>
-                    <li className={`relative w-full overflow-hidden ${OpenItem == 'home' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200  transition-all duration-800`}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer' ><span className='font-semibold'>Home</span><i className="ri-arrow-down-s-line"></i></div>
+                    <li className={`relative w-full overflow-hidden ${OpenItem == 'home' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200  transition-all duration-800`}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer' ><span className='font-semibold'>Inicio</span><i className="ri-arrow-down-s-line"></i></div>
                       <ul className='flex flex-col gap-1 ml-2 my-2'>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Home 1</li>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Home 2</li>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Home 3</li>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Home 4</li>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Home 5</li>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Home 6</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Inicio 1</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Inicio 2</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Inicio 3</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Inicio 4</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Inicio 5</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Inicio 6</li>
                       </ul>
                     </li>
-                    <li className={`relative w-full overflow-hidden ${OpenItem == 'shop' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200  transition-all duration-800`}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Shop</span><i className="ri-arrow-down-s-line"></i></div>
+                    <li className={`relative w-full overflow-hidden ${OpenItem == 'shop' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200  transition-all duration-800`}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Tienda</span><i className="ri-arrow-down-s-line"></i></div>
                       <ul className='flex flex-col gap-1 ml-2 my-2 '>
                         <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Shop Grid - Right Sidebar</li>
                         <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Shop Grid - Left Sidebar</li>
@@ -365,17 +363,17 @@ const index = useRef(0);
                         </li>
                       </ul>
                     </li>
-                    <li className={`relative w-full overflow-hidden ${OpenItem == 'vendors' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200 `}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Vendors</span><i className="ri-arrow-down-s-line"></i></div>
+                    <li className={`relative w-full overflow-hidden ${OpenItem == 'vendors' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200 `}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Proveedores</span><i className="ri-arrow-down-s-line"></i></div>
                       <ul  className='flex flex-col gap-1 ml-2 my-2 '>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Vendors Grid</li>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Vendors List</li>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Vendors Details 01</li>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Vendors Details 02</li>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Vendors Details 03</li>
-                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Vendors Guide</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Cuadrícula</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Lista</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Detalle 01</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Detalle 02</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Detalle 03</li>
+                        <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Guía</li>
                       </ul>
                     </li>
-                    <li className={`relative w-full overflow-hidden ${OpenItem == 'mega menu' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200 `}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Mega Menu</span><i className="ri-arrow-down-s-line"></i></div>
+                    <li className={`relative w-full overflow-hidden ${OpenItem == 'mega menu' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200 `}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Mega menú</span><i className="ri-arrow-down-s-line"></i></div>
                         <ul className='flex flex-col gap-1 ml-2 my-2 '>
                            <li onClick={toggleMiniItem} className='relative w-full overflow-hidden h-[20px] '><div className='w-full flex justify-between cursor-pointer hover:text-[#3BB77E] transition-all duration-200'><span>Women's Fashion </span><i className="ri-arrow-down-s-line "></i></div>
                             <ul className='flex flex-col gap-1 ml-2 my-2 '>
@@ -403,7 +401,7 @@ const index = useRef(0);
                           </li>
                         </ul>
                     </li>
-                   <li className={`relative w-full overflow-hidden ${OpenItem == 'blogs' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200 `}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Blogs</span><i className="ri-arrow-down-s-line"></i></div>
+                   <li className={`relative w-full overflow-hidden ${OpenItem == 'blogs' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200 `}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Blog</span><i className="ri-arrow-down-s-line"></i></div>
                       <ul className='flex flex-col gap-1 ml-2 my-2 '>
                         <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Blog Category Grid</li>
                         <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Blog Category List</li>
@@ -418,37 +416,37 @@ const index = useRef(0);
                         </li>
                       </ul>
                     </li>
-                    <li className={`relative w-full overflow-hidden ${OpenItem == 'pages' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200 `}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Pages</span><i className="ri-arrow-down-s-line"></i></div>
+                    <li className={`relative w-full overflow-hidden ${OpenItem == 'pages' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200 `}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Páginas</span><i className="ri-arrow-down-s-line"></i></div>
                         <ul className='flex flex-col gap-1 ml-2 my-2 '>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>About us</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Contact</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>My Account</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Login</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Rregister</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Forgot Password</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Reset Password</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Purchase Guide</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Privacy Policy</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Terms Of Services</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>404 Page</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Nosotros</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Contacto</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Mi cuenta</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Iniciar sesión</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Registrarse</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Olvidé la contraseña</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Restablecer contraseña</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Guía de compra</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Política de privacidad</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Términos de servicio</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Página 404</li>
                         </ul>
                     </li>
-                    <li className={`relative w-full overflow-hidden ${OpenItem == 'languages' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200 `}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Languages</span><i className="ri-arrow-down-s-line"></i></div>
+                    <li className={`relative w-full overflow-hidden ${OpenItem == 'languages' ? 'h-fit' : 'h-[30px]'} border-b-1 border-zinc-200 `}><div onClick={toggleItem} className='flex justify-between items-center  cursor-pointer'><span className='font-semibold'>Idiomas</span><i className="ri-arrow-down-s-line"></i></div>
                         <ul className='flex flex-col gap-1 ml-2 my-2 '>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>English</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>French</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>German</li>
-                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Spanish</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Español</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Francés</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Alemán</li>
+                          <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'>Inglés</li>
                         </ul>
                     </li>
                   </ul>
                   <ul className='mt-8 border-1 border-zinc-200 p-5 flex flex-col gap-1 justify-center'>
                     <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'><i className="ri-map-pin-line text-[#3BB77E]"></i><span className='ml-1 text-sm'>Online Work</span></li>
-                    <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'><i class="ri-user-3-line text-[#3BB77E]"></i><span className='ml-1 text-sm'>Login In / Sign Up</span></li>
+                    <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'><i class="ri-user-3-line text-[#3BB77E]"></i><span className='ml-1 text-sm'>Iniciar sesión / registrarse</span></li>
                     <li className = 'cursor-pointer hover:text-[#3BB77E] transition-all duration-200'><i className="ri-customer-service-line text-[#3BB77E]"></i><span className='ml-1 text-sm'>+92 328-3673707</span></li>
                   </ul>
                     <div className='mt-8'>
-                      <h5 className='font-semibold text-lg'>Follow Us</h5>
+                      <h5 className='font-semibold text-lg'>Síguenos</h5>
                       <ul className='flex gap-2 mt-2'>
                                   <li className='w-7 h-7 cursor-pointer bg-[#3BB77E] rounded-full flex items-center justify-center text-white'><i className="ri-facebook-fill"></i></li>
                                   <li className='w-7 h-7 cursor-pointer bg-[#3BB77E] rounded-full flex items-center justify-center text-white'><i className="ri-instagram-line"></i></li>
@@ -456,7 +454,7 @@ const index = useRef(0);
                                   <li className='w-7 h-7 cursor-pointer bg-[#3BB77E] rounded-full flex items-center justify-center text-white'><i className="ri-github-fill"></i></li>
                                   <li className='w-7 h-7 cursor-pointer bg-[#3BB77E] rounded-full flex items-center justify-center text-white'><i className="ri-youtube-fill"></i></li>
                       </ul>
-                        <h6 className='mt-7 text-zinc-500 text-sm mb-6'>Copyright 2025 &copy; Nest. All rights reserved. Powered by <span className='text-[#3BB77E]'>OwaisTheme</span></h6>
+                        <h6 className='mt-7 text-zinc-500 text-sm mb-6'>Copyright 2025 &copy; Nest. Todos los derechos reservados. Desarrollado por <span className='text-[#3BB77E]'>Yoxmel Morles y equipo</span></h6>
                     </div>  
               </div>
               </div>
@@ -471,7 +469,7 @@ const index = useRef(0);
           <div className='flex items-center  gap-4 relative w-full'>
             <div>
                 <div onClick={listToggle} className='flex gap-2 items-center cursor-pointer border-r-1 px-2 '> 
-                  <h6 className='text-[0.9rem] font-semibold whitespace-nowrap'>All Categories</h6>
+                  <h6 className='text-[0.9rem] font-semibold whitespace-nowrap'>Todas las categorías</h6>
                   <i className="text-[0.9rem] font-semibold mt-[2px] ri-arrow-down-s-line"></i>
                 </div>
               <div  ref={list}  className='text-sm absolute top-[100%] z-20 left-[-3%] rounded-lg bg-white border-1 border-zinc-300 px-4 py-3 w-[15rem] hidden flex-col justify-center max-h-[20rem] overflow-hidden '>
@@ -491,7 +489,7 @@ const index = useRef(0);
                 </ul>
               </div>
             </div>
-            <input className='w-full outline-none ' type='text' placeholder='Search Items...'/>
+            <input className='w-full outline-none ' type='text' placeholder='Buscar productos...'/>
             <i className="text-lg ri-search-line cursor-pointer"></i>
           </div>
         </div>
@@ -503,7 +501,7 @@ const index = useRef(0);
                         <h6 className='text-[0.8rem]'>3</h6>
                     </div>
                 </div>
-                    <h5>Compare</h5>
+                    <h5>Comparar</h5>
               </div>
               <div className='flex gap-3 cursor-pointer'>
                 <div className='relative cursor-pointer'>
@@ -512,7 +510,7 @@ const index = useRef(0);
                         <h6 className='text-[0.8rem]'>4</h6>
                     </div>
                 </div>
-                    <h5>Wishlist</h5>
+                    <h5>Lista</h5>
               </div>
               <div className='flex gap-3 cursor-pointer'>
                 <div className='relative cursor-pointer'>
@@ -521,13 +519,13 @@ const index = useRef(0);
                         <h6 className='text-[0.8rem]'>4</h6>
                     </div>
                 </div>
-                <h5>Cart</h5>
+                <h5>Carrito</h5>
               </div>
               <div className='flex gap-2 cursor-pointer'>
                 <div className='relative cursor-pointer'>
                     <img className='min-w-[1.65rem]' src={user} alt='Cart Icon'/>
                 </div>
-                <h5>Account</h5>
+                <h5>Cuenta</h5>
               </div>
         </div>
       </div>
@@ -558,20 +556,20 @@ const index = useRef(0);
                 </div>
               <div className='Show More mx-auto  w-fit cursor-pointer mt-4'>
                     <i className="ri-add-circle-line mr-1 text-[#3BB77E] text-xl inline-block"></i>
-                    <h6 className='text-md inline-block'>Show more...</h6>
+                    <h6 className='text-md inline-block'>Mostrar más...</h6>
               </div>
             </div>
           </div>
           <div className='menuOptions w-[60%] h-full'>
             <ul className='flex w-full gap-7 flex-wrap mt-[-5px] xl:mt-0 xl:flex-nowrap h-full items-center justify-center Items'>
-              <li className='cursor-pointer font-semibold text-[17px]'><i className="ri-fire-line text-[#3BB77E] "></i>Deals</li>
+              <li className='cursor-pointer font-semibold text-[17px]'><i className="ri-fire-line text-[#3BB77E] "></i>Ofertas</li>
               <li onMouseEnter={ () => { 
                 EnterHandler(home.current)
                 }}
                 onMouseLeave={ ()=>{
                   LeaveHandler(home.current)
                 }}
-                className='flex gap-1 text-[#3BB77E] font-semibold text-[17px] relative'><span className='cursor-pointer whitespace-nowrap'>Home <i className="ri-arrow-down-s-line mt-[0.1rem]"></i></span>
+                className='flex gap-1 text-[#3BB77E] font-semibold text-[17px] relative'><span className='cursor-pointer whitespace-nowrap'>Inicio <i className="ri-arrow-down-s-line mt-[0.1rem]"></i></span>
                   <div ref={home} className='bg-white shadow-md absolute text-sm translate-y-[5px] z-99 text-zinc-500 top-[125%] left-0  rounded-lg px-8 py-3 pr-10 hidden opacity-0 flex-col gap-3 whitespace-nowrap'> 
                     <h6 className='cursor-pointer'>Home 1</h6>
                     <h6 className='cursor-pointer'>Home 2</h6>
@@ -582,13 +580,13 @@ const index = useRef(0);
                   </div>
                 </li>
 
-              <li className='cursor-pointer font-semibold text-[17px]'>About</li>
+              <li className='cursor-pointer font-semibold text-[17px]'>Nosotros</li>
               <li onMouseEnter={ () => { 
                 EnterHandler(shop1.current)
                 }}
                 onMouseLeave={ ()=>{
                   LeaveHandler(shop1.current)
-                }} className='flex gap-1 font-semibold text-[17px] relative '><span className='cursor-pointer whitespace-nowrap'>Shop <i className="ri-arrow-down-s-line mt-[0.1rem]"></i></span>
+                }} className='flex gap-1 font-semibold text-[17px] relative '><span className='cursor-pointer whitespace-nowrap'>Tienda <i className="ri-arrow-down-s-line mt-[0.1rem]"></i></span>
                   <div ref={shop1} className='hidden absolute flex-col py-3 z-99 w-[220px] whitespace-nowrap rounded-lg bg-white  top-[125%] left-0 shadow-md text-sm text-zinc-500 gap-3'> 
                     <h6 className='capitalize cursor-pointer px-3'>shop grid - right sidebar</h6>
                     <h6 className='capitalize cursor-pointer px-3'>shop grid - left sidebar</h6>
@@ -633,7 +631,7 @@ const index = useRef(0);
                     </h6>
                   </div>
                 </li>
-              <li onMouseEnter={()=>{EnterHandler(vendor.current)}} onMouseLeave={()=>{LeaveHandler(vendor.current)}} className='flex gap-1 font-semibold text-[17px] relative'><span className='cursor-pointer whitespace-nowrap'>Vendors <i className="ri-arrow-down-s-line mt-[0.1rem]"></i></span>
+              <li onMouseEnter={()=>{EnterHandler(vendor.current)}} onMouseLeave={()=>{LeaveHandler(vendor.current)}} className='flex gap-1 font-semibold text-[17px] relative'><span className='cursor-pointer whitespace-nowrap'>Proveedores <i className="ri-arrow-down-s-line mt-[0.1rem]"></i></span>
                 <div ref={vendor} className='hidden absolute flex-col z-99 whitespace-nowrap top-[100%] bg-white p-3 shadow-md w-[170px] rounded-lg text-zinc-500 gap-3 text-sm'>
                   <h6 className='Capitalize cursor-pointer'>Vendors Grid</h6>
                   <h6 className='Capitalize cursor-pointer'>Vendors List</h6>
@@ -643,7 +641,7 @@ const index = useRef(0);
                   <h6 className='Capitalize cursor-pointer'>vendor guide</h6>
                 </div>
               </li>
-              <li onMouseEnter={()=>{EnterHandler(menuList.current)}} onMouseLeave={()=>{LeaveHandler(menuList.current)}} className='flex gap-1 whitespace-nowrap  relative font-semibold text-[17px]'><span className='cursor-pointer'>Mega menu <i className="ri-arrow-down-s-line mt-[0.1rem]"></i> </span>
+              <li onMouseEnter={()=>{EnterHandler(menuList.current)}} onMouseLeave={()=>{LeaveHandler(menuList.current)}} className='flex gap-1 whitespace-nowrap  relative font-semibold text-[17px]'><span className='cursor-pointer'>Mega menú <i className="ri-arrow-down-s-line mt-[0.1rem]"></i> </span>
                 <div ref={menuList} className='bg-white xl:gap-28 xl:p-8 gap-15 z-99 absolute top-[120%] hidden  left-[-570%] p-4 rounded-lg shadow-md'>
                   <div className='flex flex-col text-sm gap-3 text-zinc-500'>
                     <h4 className='capitalize text-xl text-[#3BB77E] mb-3'>fruits & vegetables</h4>
@@ -673,7 +671,7 @@ const index = useRef(0);
                     <h6 className='capitalize cursor-pointer'>crab and shellfish</h6>
                   </div>
                   <div className='relative w-[310px] p-4 xl:w-[350px]'>
-                      <img src={menuBanner} alt='Banner Image' className='absolute top-0 left-0 z-1'/>
+                      <img src={menuImg} alt='Banner Image' className='absolute top-0 left-0 z-1'/>
                       <div className='relative z-10'>
                         <div className='flex flex-col absolute top-0 right-0 gap-1 justify-center items-center  bg-[#FFD55A] w-18 rounded-full h-18'><h6 className='leading-none text-xl'>25%</h6> <h6 className='leading-none text-lg'>off</h6></div>
                         <div className='h-full flex flex-col justify-between xl:gap-1'>

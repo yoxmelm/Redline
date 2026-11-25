@@ -46,10 +46,10 @@ const StartAni = () => {
           </div>
           <div className="popupContainer relative z-1">
             <h6 className="text-yellow-500 text-lg font-semibold">
-              Deal of the Day
+              Oferta del día
             </h6>
             <h1 className="text-4xl font-semibold md:w-[35rem]">
-              Organic fruit for your family's health
+              Fruta orgánica para la salud de tu familia
             </h1>
             <div className="flex mt-5 items-center">
               <h1 className="price text-[3.2rem] text-[#3BB77E] font-bold ">
@@ -57,7 +57,7 @@ const StartAni = () => {
               </h1>
               <div className="ml-4 ">
                 <h6 className="disPrice1 text-yellow-500 leading-none font-semibold text-sm">
-                  26% off
+                  26% de descuento
                 </h6>
                 <h4 className="disPrice2 text-zinc-400 text-2xl line-through font-semibold">
                   $52
@@ -65,7 +65,7 @@ const StartAni = () => {
               </div>
             </div>
             <h6 className="hurry text-zinc-400 mt-2">
-              Hurry Up! Offer Bid In:
+              ¡Apúrate! La oferta termina en:
             </h6>
 
             {/* Countdown Timer Boxes */}
@@ -74,7 +74,7 @@ const StartAni = () => {
               <div className="timerBox w-[60px] h-[60px] border-2 border-[#3BB77E] bg-white text-[#3BB77E] rounded-md flex flex-col items-center justify-center">
                 <h3 className="timerCount text-xl font-bold leading-4">{timeLeft.days}</h3>
                 <span className="timerHead text-sm mt-1 font-semibold text-zinc-500">
-                  Days
+                  Días
                 </span>
               </div>
 
@@ -84,7 +84,7 @@ const StartAni = () => {
                   {String(timeLeft.hours).padStart(2, "0")}
                 </h3>
                 <span className="timerHead text-sm mt-1 font-semibold text-zinc-500">
-                  Hours
+                  Horas
                 </span>
               </div>
 
@@ -94,7 +94,7 @@ const StartAni = () => {
                   {String(timeLeft.minutes).padStart(2, "0")}
                 </h3>
                 <span className="timerHead text-sm mt-1 font-semibold text-zinc-500">
-                  Mins
+                  Min
                 </span>
               </div>
 
@@ -104,7 +104,7 @@ const StartAni = () => {
                   {String(timeLeft.seconds).padStart(2, "0")}
                 </h3>
                 <span className="timerHead text-sm mt-1 font-semibold text-zinc-500">
-                  Secs
+                  Seg
                 </span>
               </div>
             </div>
@@ -115,10 +115,10 @@ const StartAni = () => {
               <i className="ri-star-fill text-yellow-400"></i>
               <i className="ri-star-fill text-yellow-400"></i>
               <i className="ri-star-fill text-zinc-300"></i>
-              <h6 className="rate text-zinc-400 text-base ml-2">(32 rates)</h6>
+              <h6 className="rate text-zinc-400 text-base ml-2">(32 valoraciones)</h6>
             </div>
             <button className="bg-[#3BB77E] cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-yellow-500 hover:px-6 transition-all duration-200">
-              Shop Now<i class="ri-arrow-right-line ml-2 "></i>
+              Comprar ahora<i class="ri-arrow-right-line ml-2 "></i>
             </button>
           </div>
           <img

@@ -161,22 +161,22 @@ const HeroSection = () => {
       >
         <div className="relative z-2 p-4 flex flex-col sm:w-[37rem] sm:p-10 lg:px-12  gap-6 text-[#253D4E]">
           <h1 className="heroHead text-[3.2rem] w-[80%] lg:text-[4rem] lg:w-[100%] leading-none font-semibold">
-            Don't miss amazing grocery deals
+            No te pierdas las mejores ofertas del supermercado
           </h1>
           <h4 className="heroHead2 text-[1.5rem] text-zinc-600 lg:text-[1.6rem]">
-            Sign up for daily newsletter
+            Suscríbete al boletín diario
           </h4>
           <div className="mt-1 bg-white flex justify-between items-center rounded-full h-15 lg:mt-5">
             <div className=" ml-4 flex gap-2 items-center w-[60%]">
               <i className="ri-send-plane-line text-xl "></i>
               <input
                 type="text"
-                placeholder="Your email address "
+                placeholder="Tu correo electrónico"
                 className="w-[130%] outline-none"
               />
             </div>
             <button className="heroButton bg-[#3BB77E] text-lg text-white h-full w-34 cursor-pointer rounded-full">
-              Subscribe
+              Suscribirme
             </button>
           </div>
         </div>
@@ -189,22 +189,22 @@ const HeroSection = () => {
       >
         <div className="relative z-2 p-4 lg:px-12 flex flex-col gap-6 text-[#253D4E] sm:w-[37rem] sm:p-10 ">
           <h1 className="heroHead text-[3.2rem] lg:text-[4rem] lg:w-[100%] leading-none font-semibold">
-            Fresh Vegetables Big Discount
+            Verduras frescas con grandes descuentos
           </h1>
           <h4 className="heroHead2 text-[1.5rem] text-zinc-600 lg:text-[1.7rem]">
-            Save up to 50% off on your first order
+            Ahorra hasta un 50% en tu primera compra
           </h4>
           <div className="mt-1 bg-white flex justify-between items-center rounded-full h-15 lg:mt-5">
             <div className=" ml-4 flex gap-2 items-center w-[60%]">
               <i className="ri-send-plane-line text-xl "></i>
               <input
                 type="text"
-                placeholder="Your email address "
+                placeholder="Tu correo electrónico"
                 className="w-[130%] outline-none"
               />
             </div>
             <button className="heroButton bg-[#3BB77E] text-lg text-white h-full w-34 cursor-pointer rounded-full">
-              Subscribe
+              Suscribirme
             </button>
           </div>
         </div>

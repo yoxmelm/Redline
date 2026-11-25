@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const DealDayProduct = React.forwardRef(({
   img,
@@ -90,7 +90,7 @@ const DealDayProduct = React.forwardRef(({
           </div>
           <div className="bg-[#3BB77E] dailyAddButton flex gap-2 text-white px-3 py-1 rounded-md cursor-pointer hover:translate-y-[-5px] transition-all duration-200 hover:bg-[#3BB77E] hover:text-white  mx-2 mb-2">
             <i className="ri-shopping-cart-2-line "></i>
-            <h6>Add to Cart</h6>
+            <h6>Añadir al carrito</h6>
           </div>
         </div>
       </div>

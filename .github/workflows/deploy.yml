@@ -1,0 +1,69 @@
+name: Redline - Comprobar y publicar
+
+# Este workflow se ejecuta:
+# 1. En cualquier Pull Request.
+# 2. Cuando se suben cambios a la rama main.
+# Solo los cambios de main se publican en GitHub Pages.
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: redline-pages
+  cancel-in-progress: true
+
+jobs:
+  comprobar:
+    name: 1. Comprobar el proyecto
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar los archivos del proyecto
+        uses: actions/checkout@v4
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias exactas
+        run: npm ci
+
+      - name: Revisar errores con ESLint
+        run: npm run lint
+
+      - name: Crear la versión lista para publicar
+        run: npm run build
+
+      - name: Guardar los archivos creados
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  publicar:
+    name: 2. Publicar en GitHub Pages
+    needs: comprobar
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+
+    steps:
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Publicar el proyecto
+        id: despliegue
+        uses: actions/deploy-pages@v4

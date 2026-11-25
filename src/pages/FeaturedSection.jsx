@@ -171,12 +171,12 @@ useEffect(() => {
   return (
     <div ref={mainDiv} className='px-4 lg:px-6 mt-10 text-[#253D4E]'>
       <div ref={slideTop}  className='md:flex md:justify-between md:items-center' >
-        <h2 className='text-[2rem] font-semibold lg:text-[2.3rem] md:whitespace-nowrap'>Featured Categories</h2>
+        <h2 className='text-[2rem] font-semibold lg:text-[2.3rem] md:whitespace-nowrap'>Categorías destacadas</h2>
         <div className='mt-3 flex justify-between items-center lg:items-end md:mt-0 md:w-[100%] '>
           <ul className='flex text-sm w-[18rem] justify-between lg:whitespace-nowrap lg:gap-2 md:ml-4'>
-            <li className='border-r-1 px-2 pl-0 text-center cursor-pointer lg:px-3'>Cake & Milk</li>
-            <li className='border-r-1 px-2 text-center cursor-pointer lg:px-3'>Coffee & Teas</li>
-            <li className='px-2 text-center cursor-pointer'>Pet Foods Vegetables</li>
+            <li className='border-r-1 px-2 pl-0 text-center cursor-pointer lg:px-3'>Pasteles y leche</li>
+            <li className='border-r-1 px-2 text-center cursor-pointer lg:px-3'>Café y tés</li>
+            <li className='px-2 text-center cursor-pointer'>Verduras y mascotas</li>
           </ul>
           <div className='flex gap-2'>
             <div

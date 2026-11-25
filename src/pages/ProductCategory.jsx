@@ -12,10 +12,6 @@ import pro9 from '../assets/HomePageAssets/thumbnail-5.jpg'
 import pro10 from '../assets/HomePageAssets/thumbnail-6.jpg'
 import pro11 from '../assets/HomePageAssets/thumbnail-7.jpg'
 import pro12 from '../assets/HomePageAssets/thumbnail-8.jpg'
-import pro13 from '../assets/HomePageAssets/thumbnail-9.jpg'
-import pro14 from '../assets/HomePageAssets/thumbnail-10.jpg'
-import pro15 from '../assets/HomePageAssets/thumbnail-11.jpg'
-import pro16 from '../assets/HomePageAssets/thumbnail-12.jpg'
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -58,7 +54,7 @@ const ProductCategory = () => {
     <div ref={mainContainer} className='px-4 lg:px-6 mt-10 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 xl:gap-2'>
         <div  className='Cat1 w-full category-section'>
             <div className='flex flex-col gap-4'>
-                <h2 className='text-[1.8rem] font-semibold'>Top Selling</h2>
+                <h2 className='text-[1.8rem] font-semibold'>Más vendidos</h2>
                 <div className='mainLine border-b-2 border-zinc-300 relative'>
                     <div className='greenLine absolute top-[-1px] left-0 z-3 border-b-2 border-[#3BB77E] w-[25%]'></div>
                 </div>
@@ -71,7 +67,7 @@ const ProductCategory = () => {
         </div>
         <div  className='Cat2 category-section'>
             <div className='flex flex-col gap-4'>
-                <h2 className='text-[1.8rem] font-semibold'>Trending Products</h2>
+                <h2 className='text-[1.8rem] font-semibold'>Productos en tendencia</h2>
                 <div className='mainLine border-b-2 border-zinc-300 relative'>
                     <div className='greenLine absolute top-[-1px] left-0 z-3 border-b-2 border-[#3BB77E] w-[25%]'></div>
                 </div>
@@ -84,7 +80,7 @@ const ProductCategory = () => {
         </div>
         <div  className='Cat3 category-section'>
             <div className='flex flex-col gap-4'>
-                <h2 className='text-[1.8rem] font-semibold'>Recently Added</h2>
+                <h2 className='text-[1.8rem] font-semibold'>Añadidos recientemente</h2>
                 <div className='mainLine border-b-2 border-zinc-300 relative'>
                     <div className='greenLine absolute top-[-1px] left-0 z-3 border-b-2 border-[#3BB77E] w-[25%]'></div>
                 </div>
@@ -97,7 +93,7 @@ const ProductCategory = () => {
         </div>
         <div  className='Cat4 category-section'>
             <div className='flex flex-col gap-4'>
-                <h2 className='text-[1.8rem] font-semibold'>Top Rated</h2>
+                <h2 className='text-[1.8rem] font-semibold'>Mejor valorados</h2>
                 <div className='mainLine border-b-2 border-zinc-300 relative'>
                     <div className='greenLine absolute top-[-1px] left-0 z-3 border-b-2 border-[#3BB77E] w-[25%]'></div>
                 </div>

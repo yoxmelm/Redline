@@ -30,24 +30,6 @@ import product9_2 from '../assets/HomePageAssets/product-9-2.jpg';
 import product10_1 from '../assets/HomePageAssets/product-10-1.jpg';
 import product10_2 from '../assets/HomePageAssets/product-10-2.jpg';
 
-import product11_1 from '../assets/HomePageAssets/product-11-1.jpg';
-import product11_2 from '../assets/HomePageAssets/product-11-2.jpg';
-
-import product12_1 from '../assets/HomePageAssets/product-12-1.jpg';
-import product12_2 from '../assets/HomePageAssets/product-12-2.jpg';
-
-import product13_1 from '../assets/HomePageAssets/product-13-1.jpg';
-import product13_2 from '../assets/HomePageAssets/product-13-2.jpg';
-
-import product14_1 from '../assets/HomePageAssets/product-14-1.jpg';
-import product14_2 from '../assets/HomePageAssets/product-14-2.jpg';
-
-import product15_1 from '../assets/HomePageAssets/product-15-1.jpg';
-import product15_2 from '../assets/HomePageAssets/product-15-2.jpg';
-
-import product16_1 from '../assets/HomePageAssets/product-16-1.jpg';
-import product16_2 from '../assets/HomePageAssets/product-16-2.jpg';
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -93,15 +75,15 @@ const PopularProducts = () => {
   return (
     <div className='px-4 lg:px-6 mt-10'>
         <div ref={cardHead}>
-            <h2 className='text-[2rem] font-semibold lg:text-[2.3rem] md:whitespace-nowrap'>Popular Products</h2>
+            <h2 className='text-[2rem] font-semibold lg:text-[2.3rem] md:whitespace-nowrap'>Productos populares</h2>
             <ul className=' flex flex-wrap gap-4 mt-3'>
-                <li className='text-[#3BB77E] hover:translate-y-[-3px] cursor-pointer transition-all duration-200'>All</li>
-                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Milks & Dairies</li>
-                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Coffee & Teas</li>
-                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Pet Foods</li>
-                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Meats</li>
-                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Vegetables</li>
-                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Fruits</li>
+                <li className='text-[#3BB77E] hover:translate-y-[-3px] cursor-pointer transition-all duration-200'>Todos</li>
+                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Lácteos</li>
+                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Café y tés</li>
+                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Alimentos para mascotas</li>
+                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Carnes</li>
+                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Verduras</li>
+                <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Frutas</li>
             </ul>
         </div>
         {/* iskay columns ko maintain krny ka code index css mn likha hua hy  */}

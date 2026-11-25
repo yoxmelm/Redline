@@ -6,7 +6,7 @@ const FeatureFruitCard = ({head, img}) => {
       style={{ backgroundImage: `url(${img})` }}>
       <div className='w-[210px]  flex flex-col gap-3 md:w-[250px] lg:w-[220px] xl:w-[250px] '>
         <h3 className='font-semibold text-[1.3rem] md:text-[1.6rem]'>{head}</h3>
-        <button className='bg-[#3BB77E] w-fit text-white px-3 py-2 rounded-md mt-3 font-semibold text-sm group hover:bg-yellow-500 transition-all duration-200 cursor-pointer'>Shop Now <i className="group-hover:ml-3 transiton-all duration-200 ri-arrow-right-line"></i></button>
+        <button className='bg-[#3BB77E] w-fit text-white px-3 py-2 rounded-md mt-3 font-semibold text-sm group hover:bg-yellow-500 transition-all duration-200 cursor-pointer'>Comprar ahora <i className="group-hover:ml-3 transiton-all duration-200 ri-arrow-right-line"></i></button>
       </div>
     </div>
   )

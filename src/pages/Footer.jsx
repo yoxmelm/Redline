@@ -22,7 +22,6 @@ const Footer = () => {
     let last = useRef();
     let mainContainer = useRef();
 
-    
     useEffect(()=>{
         let blocks = [block1.current, block2.current, block3.current, block4.current, block5.current, block6.current]
 
@@ -31,11 +30,10 @@ const Footer = () => {
                     scrollTrigger: {
                         trigger: mainContainer.current,
                         start: "-50% top",
-                        // markers: true,
                     }
                     });
     
-            blocks.forEach((block, i)=>{
+            blocks.forEach((block)=>{
                 tl.from(block,{
                     y: 100,
                     opacity: 0,
@@ -57,65 +55,77 @@ const Footer = () => {
     <div ref={mainContainer} className='px-4 lg:px-6 mt-10'>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 '>
             <div ref={block1} className='w-[60%] lg:w-[230px]'>
-                <img className='w-[10.5rem] ' src={logo} alt='Logo Image' />       
+                <img className='w-[10.5rem] ' src={logo} alt='Logo del supermercado' />
                     <ul className='flex flex-col gap-1'>
-                        <li className='text-lg mt-2'>Awesome grocery store website template</li>
-                        <li className='mt-2'><i className="text-[#3BB77E] mr-2 text-lg ri-map-pin-line"></i> 5171 W Campbell Ave undefined Kent, Utah 53127 United States</li>
+                        <li className='text-lg mt-2'>Tu supermercado de confianza para una vida más saludable.</li>
+                        <li className='mt-2'><i className="text-[#3BB77E] mr-2 text-lg ri-map-pin-line"></i> 5171 W Campbell Ave, Kent, Utah 53127, Estados Unidos</li>
                         <li><i className="text-[#3BB77E] mr-2 text-lg ri-customer-service-line"></i>+92 3283673707</li>
-                        <li><i className="text-[#3BB77E] mr-2 text-lg ri-share-forward-line"></i>khanowaiszai@gmail.com</li>
-                        <li><i className="text-[#3BB77E] mr-2 text-lg ri-timer-line"></i>10:00 - 18:00, Mon-Sat</li>
+                        <li><i className="text-[#3BB77E] mr-2 text-lg ri-share-forward-line"></i>contacto@supermercadofresco.com</li>
+                        <li><i className="text-[#3BB77E] mr-2 text-lg ri-timer-line"></i>10:00 - 18:00, Lun-Sáb</li>
                     </ul>
             </div>
             <div ref={block2} className='block1'>
-                <h4 className='text-2xl font-semibold'>Company</h4>
-                <FooterCompo item1="about us" item2="delivery information" item3="privacy policy" item4="terms & condition" item5="support center" item6="careers" item7="contact us"/> 
+                <h4 className='text-2xl font-semibold'>Empresa</h4>
+                <FooterCompo item1="nosotros" item2="información de entrega" item3="política de privacidad" item4="términos y condiciones" item5="centro de ayuda" item6="carreras" item7="contáctanos"/>
             </div>
             <div ref={block3} className='block2'>
-                <h4 className='text-2xl font-semibold'>Account</h4>
-                <FooterCompo item1="sign in" item2=" view cart" item3="my wishlist" item4="track my order" item5="help ticket" item6="shipping details" item7="compare products"/> 
+                <h4 className='text-2xl font-semibold'>Cuenta</h4>
+                <FooterCompo item1="iniciar sesión" item2="ver carrito" item3="mi lista de deseos" item4="rastrear mi pedido" item5="ticket de ayuda" item6="detalles de envío" item7="comparar productos"/>
             </div>
             <div ref={block4} className='block3'>
-                <h4 className='text-2xl font-semibold'>Corporate</h4>
-                <FooterCompo item1="become a vendor" item2="amiliate program" item3="promotions" item4="accessibility" item5="our supplies" item6="farm careers" item7="farm business"/> 
+                <h4 className='text-2xl font-semibold'>Corporativo</h4>
+                <FooterCompo item1="convertirse en proveedor" item2="programa de afiliados" item3="promociones" item4="accesibilidad" item5="nuestros proveedores" item6="carreras rurales" item7="negocio agrícola"/>
             </div>
             <div ref={block5} className='block4'>
-                <h4 className='text-2xl font-semibold'>Popular</h4>
-                <FooterCompo item1="milk & flavoured milk" item2="butter and margarine" item3=" eggs susbstitute" item4="marmadeles" item5="sour cream and dips" item6="tea & konbucha" item7="cheese" /> 
+                <h4 className='text-2xl font-semibold'>Populares</h4>
+                <FooterCompo item1="leche y lácteos" item2="mantequilla y margarina" item3="huevos" item4="marmalades" item5="cremas y dips" item6="té y kombucha" item7="quesos"/>
             </div>
             <div ref={block6} className='block5 flex flex-col gap-2'>
-                <h4 className='text-2xl font-semibold'>Install App</h4>
-                <h5 className='mt-2'>From app store to Google Play</h5>
+                <h4 className='text-2xl font-semibold'>Descarga la app</h4>
+                <h5 className='mt-2'>Desde la tienda de apps hasta Google Play</h5>
                 <div className='mt-4 flex flex-col gap-2'>
-                    <img src={playStore} alt="Google Store"  className='w-35 hover:translate-y-[-5px] transition-all duration-200 cursor-pointer'/>
-                    <img  src={appStore} className='w-35 hover:translate-y-[-5px] transition-all duration-200 cursor-pointer' alt="App Store" />
+                    <img src={playStore} alt="Google Store" className='w-35 hover:translate-y-[-5px] transition-all duration-200 cursor-pointer'/>
+                    <img src={appStore} className='w-35 hover:translate-y-[-5px] transition-all duration-200 cursor-pointer' alt="App Store" />
                 </div>
-                <h5>Secured Payment Gateways</h5>
-                <img src={payment} alt="Payment Method" className='w-48'/>
+                <h5>Pagos seguros</h5>
+                <img src={payment} alt="Métodos de pago" className='w-48'/>
             </div>
         </div>
+
+        <div className='mt-8 rounded-2xl border border-[#D8F1E5] bg-[#F4FBF7] p-5 text-[#253D4E] shadow-sm'>
+            <div className='flex flex-col gap-2 md:flex-row md:items-center md:justify-between'>
+                <div>
+                    <p className='text-xs uppercase tracking-[0.2em] text-[#3BB77E] font-bold'>Personalización</p>
+                    <h4 className='text-xl font-semibold mt-1'>Créditos de autoría y personalización</h4>
+                </div>
+                <div className='rounded-full bg-white px-4 py-2 text-sm font-medium text-[#3BB77E] border border-[#CFEFDA]'>Yoxmel Morles y equipo</div>
+            </div>
+            <p className='mt-3 text-sm text-zinc-600'>Este diseño y la experiencia de compra fueron adaptados y personalizados por Yoxmel Morles y equipo para una versión en español, con enfoque en usabilidad, responsividad y branding comercial.</p>
+        </div>
+
         <div ref={last} className='mt-8 py-4 border-t-[1px] border-[#3BB77E] flex justify-between lg:items-center'>
             <div>
-                <h5 className='w-[70%] text-zinc-400 text-sm'>&copy; 2025, <span className='text-[#3BB77E]'>Nest</span> - HTMl Ecommerce Template All Rights reserved</h5>
+                <h5 className='w-[70%] text-zinc-400 text-sm'>&copy; 2025, <span className='text-[#3BB77E]'>Nest</span> - Plantilla de e-commerce. Todos los derechos reservados.</h5>
             </div>
             <div className='hidden lg:flex lg:flex-col'>
-                <div className='flex  items-center gap-2'>
-                    <img src={call} alt='Call Icon' className='w-7'/>
-                    <div >
+                <div className='flex items-center gap-2'>
+                    <img src={call} alt='Icono de llamada' className='w-7'/>
+                    <div>
                         <h5 className='text-[#3BB77E] font-bold text-xl'>+92 328-3673707</h5>
-                        <h6 className='text-zinc-500 text-sm'>Working 24/7</h6>
+                        <h6 className='text-zinc-500 text-sm'>Atención 24/7</h6>
                     </div>
                 </div>
                 <div className='flex items-center gap-2'>
-                    <img src={call} alt="Call Icon" className='w-7'/>
-                    <div >
-                        <h5  className='text-[#3BB77E] font-bold text-xl'>+92 318-5598060</h5>
-                        <h6 className='text-zinc-500 text-sm'>Customer Support 24 Hours</h6>
+                    <img src={call} alt='Icono de llamada' className='w-7'/>
+                    <div>
+                        <h5 className='text-[#3BB77E] font-bold text-xl'>+92 318-5598060</h5>
+                        <h6 className='text-zinc-500 text-sm'>Soporte al cliente 24 horas</h6>
                     </div>
                 </div>
             </div>
             <div className='hidden md:flex md:flex-col'>
-                <div className='flex items-center  gap-2'>
-                    <h5 className='font-semibold'>Follow Us</h5>
+                <div className='flex items-center gap-2'>
+                    <h5 className='font-semibold'>Síguenos</h5>
                     <ul className='flex gap-1'>
                         <li className='w-6 h-6 cursor-pointer bg-[#3BB77E] rounded-full flex items-center justify-center text-white'><i className="ri-facebook-fill"></i></li>
                         <li className='w-6 h-6 cursor-pointer bg-[#3BB77E] rounded-full flex items-center justify-center text-white'><i className="ri-instagram-line"></i></li>
@@ -125,7 +135,7 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                <p className='text-zinc-400 text-sm'>Up to 15% discount on your first subscribe</p>
+                <p className='text-zinc-400 text-sm'>Descuento del 15% en tu primera suscripción</p>
             </div>
         </div>
     </div>

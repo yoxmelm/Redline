@@ -2,53 +2,25 @@ import React, { useEffect, useRef } from 'react'
 import DailySellProduct from '../components/HomePageComponent/DailySellProduct';
 import product1_1 from '../assets/HomePageAssets/product-1-1.jpg';
 import product1_2 from '../assets/HomePageAssets/product-1-2.jpg';
-
 import product2_1 from '../assets/HomePageAssets/product-2-1.jpg';
 import product2_2 from '../assets/HomePageAssets/product-2-2.jpg';
-
 import product3_1 from '../assets/HomePageAssets/product-3-1.jpg';
 import product3_2 from '../assets/HomePageAssets/product-3-2.jpg';
-
 import product4_1 from '../assets/HomePageAssets/product-4-1.jpg';
 import product4_2 from '../assets/HomePageAssets/product-4-2.jpg';
-
 import product5_1 from '../assets/HomePageAssets/product-5-1.jpg';
 import product5_2 from '../assets/HomePageAssets/product-5-2.jpg';
-
 import product6_1 from '../assets/HomePageAssets/product-6-1.jpg';
 import product6_2 from '../assets/HomePageAssets/product-6-2.jpg';
-
 import product7_1 from '../assets/HomePageAssets/product-7-1.jpg';
 import product7_2 from '../assets/HomePageAssets/product-7-2.jpg';
-
 import product8_1 from '../assets/HomePageAssets/product-8-1.jpg';
 import product8_2 from '../assets/HomePageAssets/product-8-2.jpg';
-
 import product9_1 from '../assets/HomePageAssets/product-9-1.jpg';
 import product9_2 from '../assets/HomePageAssets/product-9-2.jpg';
-
 import product10_1 from '../assets/HomePageAssets/product-10-1.jpg';
 import product10_2 from '../assets/HomePageAssets/product-10-2.jpg';
-
-import product11_1 from '../assets/HomePageAssets/product-11-1.jpg';
-import product11_2 from '../assets/HomePageAssets/product-11-2.jpg';
-
-import product12_1 from '../assets/HomePageAssets/product-12-1.jpg';
-import product12_2 from '../assets/HomePageAssets/product-12-2.jpg';
-
-import product13_1 from '../assets/HomePageAssets/product-13-1.jpg';
-import product13_2 from '../assets/HomePageAssets/product-13-2.jpg';
-
-import product14_1 from '../assets/HomePageAssets/product-14-1.jpg';
-import product14_2 from '../assets/HomePageAssets/product-14-2.jpg';
-
-import product15_1 from '../assets/HomePageAssets/product-15-1.jpg';
-import product15_2 from '../assets/HomePageAssets/product-15-2.jpg';
-
-import product16_1 from '../assets/HomePageAssets/product-16-1.jpg';
-import product16_2 from '../assets/HomePageAssets/product-16-2.jpg';
-
-import banner from '../assets/HomePageAssets/banner-4.png'
+import banner from '../assets/HomePageAssets/banner-4.png';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -288,12 +260,12 @@ const DailySells = () => {
   return (
     <div className='px-4 lg:px-6 mt-10 relative'>
           <div ref={sliderHead} className='lg:flex lg:justify-between'>
-            <h2 className='text-[2rem] font-semibold lg:text-[2.3rem] md:whitespace-nowrap'>Daily Best Sells</h2>
+            <h2 className='text-[2rem] font-semibold lg:text-[2.3rem] md:whitespace-nowrap'>Mejores ventas diarias</h2>
               <div className='flex justify-between items-center'>
                 <ul className=' flex flex-wrap gap-4 mt-3'>
-                    <li className='text-[#3BB77E] hover:translate-y-[-3px] cursor-pointer transition-all duration-200'>Featured</li>
-                    <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Popular</li>
-                    <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>New added</li>
+                    <li className='text-[#3BB77E] hover:translate-y-[-3px] cursor-pointer transition-all duration-200'>Destacados</li>
+                    <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Populares</li>
+                    <li className='hover:text-[#3BB77E] hover:translate-y-[-3px] transition-all duration-200 cursor-pointer'>Novedades</li>
                 </ul>
                 <div className="flex items-center gap-2 sm:hidden">
                   <div
@@ -315,9 +287,9 @@ const DailySells = () => {
             <div className='w-[25%] lg:h-[31rem] mt-[27px] hidden lg:flex lg:flex-col relative overflow-hidden rounded-2xl'>
                   <img src={banner} alt='Banner Image'  className='h-full object-cover absolute z-2'/>
                   <div className='relative z-4 flex flex-col justify-center items-start gap-6 h-full w-full px-8 xl:justify-between xl:py-15'>
-                    <h1 className='text-[#253D4E] text-[2.6rem] font-semibold xl:w-[90%]'>Bring nature into your home</h1>
+                    <h1 className='text-[#253D4E] text-[2.6rem] font-semibold xl:w-[90%]'>Trae la naturaleza a tu hogar</h1>
                     <div className=''>
-                        <button className='bg-[#3BB77E] w-fit text-white px-3 py-2 rounded-md mt-3 font-semibold text-sm group hover:bg-yellow-500 transition-all duration-200 cursor-pointer'>Shop Now <i className="group-hover:ml-3 transiton-all duration-200 ri-arrow-right-line"></i></button>
+                        <button className='bg-[#3BB77E] w-fit text-white px-3 py-2 rounded-md mt-3 font-semibold text-sm group hover:bg-yellow-500 transition-all duration-200 cursor-pointer'>Comprar ahora <i className="group-hover:ml-3 transiton-all duration-200 ri-arrow-right-line"></i></button>
                     </div>
                   </div>
               </div>
