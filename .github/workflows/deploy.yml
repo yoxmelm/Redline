@@ -57,6 +57,8 @@ jobs:
     steps:
       - name: Preparar GitHub Pages
         uses: actions/configure-pages@v6
+        with:
+          enablement: true
 
       - name: Publicar el proyecto
         id: despliegue
