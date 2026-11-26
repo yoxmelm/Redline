@@ -1,4 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
+import yoxmelPhoto from '../assets/team/yoxmel.jpeg'
+import jhostingPhoto from '../assets/team/jhosting.jpeg'
+import juanPhoto from '../assets/team/juan.jpeg'
+import neomarPhoto from '../assets/team/neomar.jpeg'
 
 const cars = [
   { id: 1, brand: 'Ford', model: 'Mustang GT', year: 2024, type: 'Coupé', price: 58900, oldPrice: 62900, power: '480 HP', engine: '5.0 V8', transmission: 'Manual', mileage: '1 240 km', image: 'https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=1200&q=85', featured: true },
@@ -281,7 +285,9 @@ function MuscleMarketplace() {
           {team.map((member, index) => (
             <article className="team-card" key={member.id}>
               <span className="team-number">0{index + 1}</span>
-              <div className="team-avatar"><i className="ri-user-3-line"></i></div>
+              <div className="team-avatar">
+                <img src={member.image} alt={`Foto de ${member.name}`} />
+              </div>
               <h3>{member.name}</h3>
               <p>{member.role}</p>
             </article>
@@ -448,10 +454,10 @@ function MuscleMarketplace() {
 }
 
 const initialTeam = [
-  { id: 1, name: 'Yoxmel Morles', role: 'Estudiante' },
-  { id: 2, name: 'Jhosting Bermudez', role: 'Estudiante' },
-  { id: 3, name: 'Juan Gutierrez', role: 'Estudiante' },
-  { id: 4, name: 'Neomar Castro', role: 'Estudiante' },
+  { id: 1, name: 'Yoxmel Morles', role: 'Estudiante', image: yoxmelPhoto },
+  { id: 2, name: 'Jhosting Bermudez', role: 'Estudiante', image: jhostingPhoto },
+  { id: 3, name: 'Juan Gutierrez', role: 'Estudiante', image: juanPhoto },
+  { id: 4, name: 'Neomar Castro', role: 'Estudiante', image: neomarPhoto },
 ]
 
 export default MuscleMarketplace
